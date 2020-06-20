@@ -1,0 +1,15 @@
+<div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Photo Gallery</h5>
+     
+      <div class="card-columns">
+          <div class="card" *ngFor="let item of images">
+              <img class="card-img-top" src="{{item.name}}" alt="{{item.description}}">
+              <div class="card-body">
+                  <p class="card-text">{{ item.description }}</p>
+              </div>
+             
+          </div>
+      </div>
+    </div>
+</div>

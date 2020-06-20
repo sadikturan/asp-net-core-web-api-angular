@@ -1,0 +1,38 @@
+<div class="container" style="margin-top: 100px;">
+  <div class="row">
+    <div class="col-md-7">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+      
+          <tr *ngFor="let p of products" [class.bg-secondary]="p.isActive==false">
+            <td>{{p.productId}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.price}}</td>
+            <td>
+              <button class="btn btn-primary" (click)="onSelectProduct(p)">Edit</button>
+              <button class="btn btn-danger" (click)="deleteProduct(p)">Delete</button>
+            </td>
+          </tr>
+      
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-5">
+      <product-details [product]="selectedProduct" [products]="products"></product-details>
+      <hr class="my-3">
+      <product-form [products]="products"></product-form>
+    </div>
+  </div>
+</div>
+
+
+
+

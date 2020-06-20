@@ -1,0 +1,41 @@
+<div class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a [routerLink]="['/home']"  class="navbar-brand">SocialApp</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarToggler">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarToggler">
+
+        <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">        
+          <li class="navbar-nav">
+            <a [routerLink]="['/members']" routerLinkActive="active"  class="nav-link">Members</a>
+          </li>
+          <li class="navbar-nav">
+            <a [routerLink]="['/friends']" routerLinkActive="active"  class="nav-link">Friends</a>
+          </li>
+          <li class="navbar-nav">
+            <a [routerLink]="['/messages']" routerLinkActive="active"  class="nav-link">Messages</a>
+          </li>
+        </ul>
+        <ul *ngIf="loggedIn()" class="navbar-nav ml-auto">        
+          <li class="navbar-nav">
+            <a href="" class="nav-link">{{ authService.decodedToken.unique_name }}</a>
+          </li>
+          <li class="navbar-nav">
+            <a (click)="logout()" class="nav-link">Logout</a>
+          </li>
+        </ul>
+
+        <form *ngIf="!loggedIn()" #form="ngForm" class="form-inline mt-2 mt-md-0 ml-auto" (ngSubmit)="login()">
+          <input #username="ngModel" class="form-control form-control-sm mr-sm-2" required minlength="5" type="text" name="username" placeholder="Username" [(ngModel)]="model.username">
+          <input #password="ngModel" class="form-control form-control-sm mr-sm-2" required minlength="6" type="password" name="password" placeholder="Password" [(ngModel)]="model.password">
+          <button  class="btn btn-success btn-sm my-2 my-sm-0" type="submit">Login</button>
+        </form>
+
+    </div>
+
+    </div>
+  </div>
+
+  

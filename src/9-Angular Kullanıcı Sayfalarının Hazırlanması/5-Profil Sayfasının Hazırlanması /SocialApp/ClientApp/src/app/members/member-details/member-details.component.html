@@ -1,0 +1,54 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="img-container">
+                    <img src="{{ user?.profileImageUrl }}" class="card-img-top img-thumbnail" alt="{{ user?.name }}">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <strong>Location</strong>
+                        <p>{{ user?.country }}, {{ user?.city }}</p>
+                    </div>
+                    <div>
+                        <strong>Age</strong>
+                        <p>{{ user?.age }}</p>
+                    </div>
+                    <div>
+                        <strong>Last Active</strong>
+                        <p>{{ user?.lastActive }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="float-left">
+                          <h3>{{ user?.name }}'s Profile</h3>
+                    </div>
+                    <div class="btn-group float-right" role="group">
+                        <button type="button" class="btn btn-danger">Add Friend</button>
+                        <button type="button" class="btn btn-success">Message</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">About Me</h5>
+                  <p>
+                      {{ user?.introduction }}
+                  </p>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">Hobbies</h5>
+                  <p>
+                      {{ user?.hobbies }}
+                  </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div>
+    <div class="form-group">
+        <label for="name">name</label>
+        <input #name type="text" class="form-control" name="name">
+    </div>
+    <div class="form-group">
+        <label for="price">price</label>
+        <input #price type="text" class="form-control" name="price">
+    </div>
+    <div class="form-group">
+       <div class="custom-control custom-checkbox">
+           <input #isactive type="checkbox" class="custom-control-input" id="isActive">
+           <label for="" class="custom-control-label" for="isActive"></label>
+       </div>
+    </div>
+    <button class="btn btn-primary" (click)="addProduct(name.value,price.value,isactive.checked); name.value=''; price.value=''; isactive.checked=false;">Save Product</button>
+</div>

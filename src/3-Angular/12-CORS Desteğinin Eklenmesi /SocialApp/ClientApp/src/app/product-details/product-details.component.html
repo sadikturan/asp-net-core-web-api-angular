@@ -1,0 +1,18 @@
+<div *ngIf="product">
+    <input type="hidden" #id name="id" [value]="product.productId" >
+    <div class="form-group">
+        <label for="name">name</label>
+        <input [value]="product.name" #name type="text" class="form-control" name="name">
+    </div>
+    <div class="form-group">
+        <label for="price">price</label>
+        <input [value]="product.price" #price type="text" class="form-control" name="price">
+    </div>
+    <div class="form-group">
+       <div class="custom-control custom-checkbox">
+           <input [checked]="product.isActive" #isactive type="checkbox" class="custom-control-input" id="isActive">
+           <label for="" class="custom-control-label" for="isActive"></label>
+       </div>
+    </div>
+    <button (click)="addProduct(id.value,name.value,price.value,isactive.checked); name.value=''; price.value=''; isactive.checked=false;" class="btn btn-primary">Save Product</button>
+</div>
